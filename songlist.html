@@ -1,0 +1,244 @@
+<html>
+<html lang="en">
+
+<!-- Mirrored from warp.zone/songlist by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Jan 2026 21:09:56 GMT -->
+<head>
+<title>SONGLIST</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_controlSound(x, _sndObj, sndFile) { //v3.0
+  var i, method = "", sndObj = eval(_sndObj);
+  if (sndObj != null) {
+    if (navigator.appName == 'Netscape') method = "play";
+    else {
+      if (window.MM_WMP == null) {
+        window.MM_WMP = false;
+        for(i in sndObj) if (i == "ActiveMovie") {
+          window.MM_WMP = true; break;
+      } }
+      if (window.MM_WMP) method = "play";
+      else if (sndObj.FileName) method = "run";
+  } }
+  if (method) eval(_sndObj+"."+method+"()");
+  else window.location = sndFile;
+}
+//-->
+</script>
+<style>
+body {
+    margin: auto;
+    position: relative;
+    width: 1100px;
+     background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+}
+<!-- thanks, memo!!
+</style>
+
+<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+
+<style>
+h3:hover{
+color:#DAA520;
+ cursor: pointer;
+}
+ midi-player {
+  display: inline-block;
+  margin: 0px;
+  margin-bottom: 0;
+}
+midi-player::part(control-panel) {
+  background-image: url("Graphix/Panel.gif");
+   background-position: center;
+   background-size: 500px;
+  background-color: #cccccc;
+  height: 50px;
+  border: 3px outset #FFD700;
+  border-radius: 0 0 0 0;
+}
+ midi-player::part(play-button) {
+  color: #4705a3;
+  border: 0px solid currentColor;
+  background-color: #aaa;
+   border: 3px outset;
+  border-radius: 0;
+  content: 'hello';
+}
+
+
+.small_font{
+	font-size: 8pt;
+  }
+</style>
+
+</head>
+
+<body bgcolor="#0000CC" background="Graphix/WZ_backgroundTest.png" text="#6666FF" link="#9933FF" vlink="#FF9933" onLoad="MM_preloadImages('Graphix/Buttonz/Back_2.gif')">
+
+<audio id="buttonSound" src="audio/btn.wav"></audio>
+<script>
+var MidiString = "MIDIS/onestop.mid";
+function loadMidi(submittedMidiPath){
+ MidiString = submittedMidiPath;
+ document.getElementById('midiPlayerObj').src = MidiString;
+ document.getElementById('midiPlayerObj').initPlayer();
+ document.getElementById('songname').innerHTML = MidiString;
+}
+</script>
+
+
+<div id="Layer1" style="position:absolute; left:27px; top:241px; width:1100px; height:500px; z-index:2; background-image: url(Graphix/Nonsense/SonglistLayout.gif); layer-background-image: url(Graphix/Nonsense/SonglistLayout.gif); border: 1px none #000000"> 
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p onMouseOver="document.getElementById('buttonSound').play()" align="right"> <a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Back','','Graphix/Buttonz/Back_2.gif',1);MM_controlSound('play','document.CS1646083589235','Audio/Wav/ButtonClick.html')"><img src="Graphix/Buttonz/Back_1.gif" width="193" height="68" hspace="90" name="Back" alt="Back 2 Home" border="0"></a></p>
+</div>
+<div id="TitleBarLayer" style="position:absolute; width:1100px; height:222px; z-index:1; left: 25px; background-image: url(Graphix/titlebar_looping.gif); layer-background-image: url(Graphix/TitleBar.gif); border: 1px none #000000; top: 11px"> 
+  <h1 align="center"><a href="index-2.html"><img src="Graphix/WZLOGO_ForWEb.gif" width="610" height="200" align="top" name="Logo" border="0" alt="Warp Zone"></a></h1>
+</div>
+<div id="SonglistInfo" style="position:absolute; left:720px; top:293px; width:385px; height:222px; z-index:7"> 
+  <div align="center"> 
+    <h3><b>SONGLIST</b></h3>
+    <p>This is a list of every MIDI used in Warp Zone, including both their file name and the song title, if the two differ. Much of the credit information of these old demo files is missing, so if you happen to have any details about them, please email me!</p>
+    <p> To play a song, click on one of the songs on the left, and then the player below. Songs may take a while to load. </p>
+<p id=songname><script type="text/javascript">
+        document.write(MidiString)
+      </script> </p>
+  
+    
+<h2><midi-player src="MIDIS/onestop.mid" sound-font visualizer="#myVisualizer" id="midiPlayerObj"></midi-player></h2>
+    
+  </div>
+</div>
+
+<div id="SongHolder" style="position:absolute; left:45px; top:291px; width:665px; height:414px; z-index:6; overflow: scroll">
+  
+  <h2>Intro Songlist</h2>
+  <h3 onClick = "loadMidi('MIDIS/ADVENT.mid')"> ADVENT/ "Adventure Land" <span class="small_font"> Noboru Murakami || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi('MIDIS/ALLSTARS.mid')">ALLSTARS / "The GS All-Stars, Live!" <span class="small_font"> John Maul || 	&copy;1996 Roland GS All-Stars   </span></h3>
+  <h3 onClick ="loadMidi('MIDIS/BEATXG.mid')"> BeatXG <span class="small_font"> Mark Newby-Robson || 	&copy;Unknown Yamaha XG MIDI Library   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/COOL.mid')">COOL / "Cool Sweet"<span class="small_font"> Music Brains || 	&copy;1996 Roland GS All-Stars   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/BK_ALLY.mid')">BK_ALLY / "Back Alley Joe"<span class="small_font"> John Campbell || 	&copy;1992 Roland GS All-Stars   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/DEMO0003.mid')" >DEMO0003 / "Sorcery"<span class="small_font"> Sam Cardon || 	&copy;Unknown   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/Dreaming.mid')">DREAMING_XG / "Dreaming XG"<span class="small_font"> Sam Cardon || 	&copy;Unknown   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/D_JF_02S.mid')">D_JF_02S / "Fusion Demo"<span class="small_font"> Idecs Music Software || 	&copy;1996 Hypercanvas   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/D_LA_01S.mid')">D_LA_01S / "Latin DEMO_01"<span class="small_font"> Idecs Music Software || 	&copy;1996 Hypercanvas   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/D_LA_02S.mid')">D_LA_02S / "Latin DEMO_02"<span class="small_font"> Idecs Music Software || 	&copy;1996 Hypercanvas   </span></h3>
+  <h3 onClick="loadMidi('MIDIS/feelthenight.mid')">Feel_the_night_XG / "Feel The Night"<span class="small_font"> Unknown || 	&copy;1995 Yamaha XG   </span></h3>
+  <h3 onClick = "loadMidi('MIDIS/flourish.mid')">Flourish<span class="small_font"> Nathan Grigg || 	&copy;2000 Microsoft   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/FlyinMachine.mid')">Flyin' Machine<span class="small_font"> Igor Khoroshev || 	&copy;1997 Cake Walk   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/GalacticXG.mid')">Galactic_XG / "Galactic Invasion"<span class="small_font"> Dave J. Reading || 	&copy;1996 Yamaha Musicsoft Europe   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/INSIDER.mid')">INSIDER<span class="small_font"> Mitsuru Sakaue || 	&copy;1991 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/hitide.mid')">hitide<span class="small_font"> Unknown || 	&copy;Unknown Roland SC-88   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/J_CYCLE.mid')">J-CYCLE <span class="small_font"> Mitsuru Sakaue || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/lisland.mid')">lisland1<span class="small_font"> Unknown || 	&copy;Unknown Roland SC-88   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/LOW__FLY.mid')">LOW_FLY / "Low Flying"<span class="small_font"> Chas Smith || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/MOON_L.mid')">MOON_L / "Moonlight Picnic"<span class="small_font"> John Campbell || 	&copy;1994 Roland GS All-Stars (one of my favorites!)   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/OVERTURE.mid')">OVERTURE <span class="small_font"> Unknown || 	&copy;Unknown Creative MIDI SoundBlaster   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/NOSTAL.mid')">NOSTAL / "Nostalgic Heaven"<span class="small_font"> Kakumi Nishigomi || 	&copy;1993 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/onestop.mid')">Onestop <span class="small_font"> David Yackley || 	&copy;2000 Microsoft Corporation (the GOAT)  </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/PASSPORT.mid')">PASSPORT / "Passport Please" <span class="small_font"> Passport Designs || 	&copy;Unknown Microsoft  </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/POP.mid')">POP<span class="small_font"> Unknown || 	&copy;Unknown Creative MIDI Soundblaster   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/STARMAN.mid')">STARMAN<span class="small_font"> Unknown || 	&copy;Unknown Creative MIDI Soundblaster   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/STYLES_1.mid')">STYLES_1<span class="small_font"> Unknown || 	&copy;Unknown Creative MIDI Soundblaster   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/STYLES_2.mid')">STYLES_2<span class="small_font"> Unknown || 	&copy;Unknown Creative MIDI Soundblaster   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/SUMMER.mid')">SUMMER / "Summer Blend"<span class="small_font"> Kazuko Hirashita || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/SunDude.mid')">SUN_DUDE / "Sun Dude" <span class="small_font"> Unknown || 	&copy;Unknown Yamaha XG   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/town.mid')">Town <span class="small_font"> Nathan Grigg || 	&copy;2000 Microsoft (Nathan Grigg if you are looking for work i will hire you)   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/WATCHERS.mid')">Watchers<span class="small_font"> Mitsuru Sakaue || 	&copy;1993 Roland GS All-Stars   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/WIZARD.mid')">WIZARD / "Mr. wIzArD"<span class="small_font"> Marvin Sanders || 	&copy;1991 Roland SC-55 MK II   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/WORM.mid')">WORM / "W O R M Hole"<span class="small_font"> Mitsuru Sakaue || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/Myth.mid')">Y4002_02 / "Myth"<span class="small_font"> Masashi Hirashita & Kazuko Hirashita || 	&copy;1994 Roland SC-88  </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/TOXOPLASMA.mid')">Y4002_04 / "TOXOPLASMA"<span class="small_font"> Mitsuru Sakaue & Kazunori Seki || 	&copy;1994 Roland SC-88   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/MidnightChaser.mid')">Y4002_07 / "Mid Night Chaser"<span class="small_font"> Kyouko Ootagawa || 	&copy;1994 Roland SC-88   </span></h3>
+  <h2>&nbsp;</h2>
+  <h2>End Screen Songlist</h2>
+  <h3 onClick = "loadMidi ('MIDIS/CRUISE.mid')">CRUISE / "Cruising" <span class="small_font"> Mark van der Sluis || 	&copy;1992 Roland GS All-Stars   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/KEEPERS.mid')">KEEPERS / "The 'Keepers' Tale"<span class="small_font"> John Maul || 	&copy;1994 Roland GS All-Stars   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/LE_CYGNE.mid')">LE_CYGNE / "Le Cygne"<span class="small_font"> C. Saint-Saens (Kazuko & Masashi Hirashita) || 	&copy;1991 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi (MIDIS/LEYAS.mid')">LEYAS / "Leya's Song<span class="small_font"> Adrian Scott || 	&copy;1993 Roland GS All-Stars  </span></h3>
+  <h3 onClick = "loadMidi (MIDIS/M_MIST.mid')">M_MIST / "Morning Mist"<span class="small_font"> Noburu Murakami || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi (MIDIS/MACROCOS.mid')">MACROCOS / Macrocosm<span class="small_font"> Noburu Murakami || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi (MIDIS/SAILING.mid')">SAILING<span class="small_font"> Luigi Bruti & Roberto Lanciotti || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi (MIDIS/SEREN.mid')">SEREN / "Serenade"<span class="small_font"> Luigi Bruti & Roberto Lanciotti || 	&copy;1992 Roland GS All-Stars (shoutout to the italians)   </span></h3>
+  <h3 onClick = "loadMidi (MIDIS/SOUTHERN.mid')">SOUTHERN / "Southern Peace"<span class="small_font"> Ichi Itoh || 	&copy;1994 Roland GS All-Stars <a href="https://clips.twitch.tv/HandsomeTiredFloofHumbleLife-qPbzH2coi2ot_AYe">(top 10 funniest moment on warp zone)</a>   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/THE_GIFT.mid')">THE_GIFT / "The Gift [Simple Gifts]"<span class="small_font"> Traditional (Kazuko & Masashi Hirashita) || 	&copy;1991 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/WAKE_UP')">WAKE_UP / "Wake Up!"<span class="small_font"> Noburu Murakami || 	&copy;1994 Roland GS All-Stars   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/fusion.mid')">fusion / "Fusion Mania"<span class="small_font"> Unknown || 	&copy;1999 Roland Corporation   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/IntrospectXG.mid')">Introspect_XG / "Introspect (XG)"<span class="small_font"> Unknown || 	&copy;Unknown Yamaha  </span> </h3>
+  <h3>&nbsp;</h3>
+  <h2>Interior Songlist</h2>
+  <h3 onClick = "loadMidi ('MIDIS/SowetoUnderscore.mid')">j0074267 / "Soweto Underscore"<span class="small_font"> Nathan Grigg || 	&copy;1998 Microsoft Clipart   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/BABY_01.mid')">BABY_01 / "Upbeat Tempo"  <span class="small_font"> Unknown || 	&copy;1997 Microsoft Office   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/CityiH')">j0074183 / "CityiH" <span class="small_font"> Tony Verderosa || 	&copy;Unknown Microsoft Clipart   </span></h3>
+  <h3 onClick ="loadMidi ('MIDIS/DesertDance.mid')">cactus / "Desert Dance"<span class="small_font"> Jerry Schroeder || 	&copy;1998 Microsoft Clipart   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/FINCL_02.mid')">FINCL_02 / "hip-hop" <span class="small_font"> Unknown || 	&copy;1997 Microsoft Office  </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/Fusn1L.mid')">j0074198 / "Fusn1L"<span class="small_font"> Chuck Henry || 	&copy;Unknown Microsoft Clipart   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/GRID_01.mid')">GRID_01 / "fast tempo"<span class="small_font"> Unknown || 	&copy;1997 Microsoft Office   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/GroovL.mid')">j0074203 / "GroovL" <span class="small_font"> Tony Verderosa || 	&copy;Unknown Microsoft Clipart   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/HappyUnderscore.mid')">j0074254 / "Happy Underscore" <span class="small_font"> Tony Verderosa || 	&copy;1998 Microsoft Clipart   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/HappyUrban.mid')">j0074220 / "Happy Urban"<span class="small_font"> Wayne Horvitz || 	&copy;Unknown Microsoft Clipart   </span></h3> 
+  <h3 onClick = "loadMidi ('MIDIS/HappyWalk.mid')">j0074253 / "Happy Walk" <span class="small_font"> Tony Verderosa || 	&copy;Unknown Microsoft Clipart   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/NightRhythm.mid')">j0074230 / "Night Rhythm"<span class="small_font"> Tony Verderosa || 	&copy;1198 Microsoft Clipart   </span></h3> 
+  <h3 onClick = "loadMidi ('MIDIS/HeavyUnderscore.mid')">Heavy_Underscore / "Heavy Underscore"<span class="small_font"> Unknown || 	&copy;Unknown </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/NaturH.mid')">j0074226 / "NaturH" <span class="small_font"> Nathan Grigg || 	&copy;Unknown Microsoft Clipart   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/HeavyUnderscore.mid')">Heavy_Underscore / "Heavy Underscore"<span class="small_font"> Unknown || 	&copy;Unknown Microsoft Clipart   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/PAPER_01.mid')">PAPER_01 / "atmospheric" <span class="small_font"> Nathan Grigg || 	&copy;Unknown Microsoft Clipart   </span> </h3>
+  <h3 onClick = "loadMidi ('MIDIS/HeavyUnderscore.mid')">Heavy_Underscore / "Heavy Underscore"<span class="small_font"> Unknown || 	&copy;1997 Microsoft office </span></h3>
+  <h3 onClick ="loadMidi ('MIDIS/Rap1H.mid')">j0074238 / "Rap1H"<span class="small_font"> Tony Verderosa|| 	&copy;Unknown Microsoft Clipart   </span></h3>
+  <h3 onClick ="loadMidi ('MIDIS/SCHOL_02.mid')">SCHOL_02 / "laid back"<span class="small_font"> Unknown || 	&copy;1997 Microsoft Office   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/Transportation.mid')">Transportation<span class="small_font"> Stan LePard - Panther Modern || 	&copy;1998 Microsoft Clipart   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/WeatherUnderscore.mid')">j0074200 / "Weather Underscore"<span class="small_font"> Evan Schiller || 	&copy;1998 Microsoft Clipart   </span></h3>
+  <h3 onClick = "loadMidi ('MIDIS/wholesale.mid')">wholesale<span class="small_font"> Jerry Schroeder || 	&copy;1998 Microsoft Clipart   </span></h3>
+  <h3>&nbsp;</h3>
+  
+  <h2><a href=https://github.com/cifkao/html-midi-player>Click here for the link to the HTML-MIDI Github! </a></h2>
+  
+  <h2> Thank you to the fine folks at the MIDI wiki for researching so much of this! </h2>
+  
+  </div>
+<p>&nbsp;</p>
+
+<EMBED NAME='CS1646083589235' SRC='Audio/Wav/ButtonClick.html' LOOP=false AUTOSTART=false MASTERSOUND HIDDEN=true WIDTH=0 HEIGHT=0>
+
+
+
+<div id="Footer" style="position:relative; width:1100px; height:100px; z-index:1; left: 20px; background-image: url(Graphix/footer.gif); border: 1px none #000000; top: 710px"> 
+
+<p style="text-align:center; top:10px; color:#483D8B">"CoPyRiGhT" Nullcasting 2020-Forever. Proud member of CableTwo. Logo by @Heaxpsd </p>
+</div>
+</body>
+
+<!-- Mirrored from warp.zone/songlist by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Jan 2026 21:10:07 GMT -->
+</html>

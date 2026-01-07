@@ -1,0 +1,133 @@
+<html>
+
+
+<!-- Mirrored from warp.zone/Starviewer by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Jan 2026 21:09:54 GMT -->
+<head>
+  <title> STARVIEWER </title>
+  <style>
+    body {
+      margin: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin:auto;
+      background-repeat: repeat;
+      /* Do not repeat the image */
+      background-size: cover;
+    }
+ h2{
+  text-shadow: rgb(255, 252, 238) 2px 0 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+h5{
+  text-shadow: rgb(255, 255, 255) 2px 0px 10px;
+  font-size: medium;
+}
+  </style>
+  <link href="../vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  <link href="videojs-playlist-ui/dist/videojs-playlist-ui.vertical.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../unpkg.com/98.css%400.1.21/dist/98.css" />
+  <!--following needed for gobackbutton-->
+  <script language="JavaScript">
+    function MM_preloadImages() { //v3.0
+      var d = document; if (d.images) {
+        if (!d.MM_p) d.MM_p = new Array();
+        var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+          if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+      }
+    }
+
+    function MM_swapImgRestore() { //v3.0
+      var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+
+    function MM_findObj(n, d) { //v3.0
+      var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+        d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+      }
+      if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+      for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document); return x;
+    }
+
+    function MM_swapImage() { //v3.0
+      var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+        if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+
+    function MM_controlSound(x, _sndObj, sndFile) { //v3.0
+      var i, method = "", sndObj = eval(_sndObj);
+      if (sndObj != null) {
+        if (navigator.appName == 'Netscape') method = "play";
+        else {
+          if (window.MM_WMP == null) {
+            window.MM_WMP = false;
+            for (i in sndObj) if (i == "ActiveMovie") {
+              window.MM_WMP = true; break;
+            }
+          }
+          if (window.MM_WMP) method = "play";
+          else if (sndObj.FileName) method = "run";
+        }
+      }
+      if (method) eval(_sndObj + "." + method + "()");
+      else window.location = sndFile;
+    }
+  //-->
+  </script>
+
+  <!-- videoJS-->
+</head>
+
+
+
+<body bgcolor="#6633CC" background="Graphix/WZ_backgroundTest.png" text="#6666FF" link="#FF99FF" vlink="#FFCC33">
+
+  <div id="TitleBarLayer"
+    style=" width:1100px; height:222px; z-index:1; background-image: url(Graphix/titlebar_looping.gif); layer-background-image: url(Graphix/TitleBar.gif); border: 1px none #000000; top: 11px; display: flex;">
+    <h1 align="center" style="margin:auto"><a href="index-2.html"><img src="Graphix/WZLOGO_ForWEb.gif" width="610" height="200" align="top" 
+          name="Logo" border="0" alt="Warp Zone"></a></h1>
+  </div>
+  <br>   <br> 
+  <div>
+  <div id="flexTWO" style="flex-direction: row;  display:flex;  justify-content:center; width: 1100px; background-image: url(Graphix/tallbackgrounddiv.png); background-repeat: no-repeat; ">
+    <!--how do i put the columns on the sides again...-->
+   
+
+    <iframe scrolling="no" src="https://warpzone-e044b.web.app/"style="height:640px; width:800px;top:10px; ">
+
+
+    </iframe>
+    
+ </div>
+ <br> 
+<div></div>
+  <div id="explanation"
+    style="border:10px outset rgb(114, 184, 214); color:black; background-image:url(Graphix/404explainerimg.png); width:1080px; height:400px">
+    <h2>What is this?</h2>
+<h5>
+  Currently, Warp Zone streams include a joke gacha game at the beginning and end of the streams. By typing commands in chat, viewers can sometimes obtain 'Stars', which do literally nothing.
+  <br>This page allows you to view the stars you've obtained and throw them around, 2000s flash game style. Since this is just showing the stars earned during streams, there currently isn't a way to get any without watching, sorry!
+  <br>This page is mostly temporary and will be heavily expanded in the future with 'an actual game'. If you'd like to support development, please consider tossing me a few dollars on Ko-Fi. <br>
+  If you find any bugs, please screenshot the bug itself and the console (visible by inspecting element) and email it to me. 
+
+  <br><br>
+  Credits:
+  <br>
+  Programming / Art: Nullcasting <br>Database programming: dbanisimov <br>Music: @h31lo_wor1d
+</h5>
+
+
+
+  </div>
+  <div id="Footer"
+    style="width:1100px; height:100px; z-index:1; background-image: url(Graphix/footer.gif); border: 1px none #000000;">
+    <audio id="buttonSound" src="audio/btn.wav"></audio>
+    <p align="center"><a href="https://warpzone.site/" onMouseOut="MM_swapImgRestore()"
+        onMouseOver="MM_swapImage('gObACK','','Graphix/Buttonz/Back_2.gif',1)"><img name="gObACK" border="0"
+          src="Graphix/Buttonz/Back_1.gif" width="193" height="68"></a></p>
+  </div>
+
+
+</body>

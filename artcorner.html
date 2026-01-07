@@ -1,0 +1,647 @@
+<html>
+
+
+<!-- Mirrored from warp.zone/artcorner by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Jan 2026 21:11:19 GMT -->
+<head>
+    <title>ART ZONE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            position: relative;
+            max-width: 1100px;
+            background-image: url("Graphix/tileclouds.png");
+        }
+
+        #MainWindowBox {
+            border: 80px solid blue;
+            border-image: url("Graphix/Nonsense/testborder.png") stretch;
+            border-image-slice: 30%;
+            min-height: 400px;
+            border-image-outset: 10px;
+            background-image: url("Graphix/Nonsense/Pink_marble_pxr128_bmp.png");
+            z-index: 1;
+            margin-top: 0px;
+
+        }
+
+        #navbar {
+            margin-top: -90px;
+            margin-left: -50px;
+            width: 1100px;
+            filter: drop-shadow(5px 5px 2px rgba(105, 83, 118, 0.62));
+        }
+
+        #tabs {
+            display: none;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        button:hover {
+            filter: drop-shadow(0px 0px 2px rgb(221, 255, 0));
+        }
+
+        button:active {
+            transform: translateY(4px);
+        }
+
+        [id][class="showhiding"] {
+            display: none;
+        }
+
+        [id][class="showhiding"]:target {
+            display: block;
+        }
+
+        [id][class="bigshowhiding"]:target {
+            display: block;
+        }
+
+        /* idshowhiding is how internal categories are selected. */
+
+        img[class="exhibit"] {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            filter: drop-shadow(6px 6px 2px rgba(64, 60, 67, 0.62));
+            cursor: zoom-in;
+
+        }
+
+        img[class="preview"] {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            filter: drop-shadow(6px 6px 2px rgba(64, 60, 67, 0.62));
+            cursor: pointer;
+        }
+
+        img[class="smallfry"] {
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .gallery {
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 2;
+            /* Sit on top */
+            padding-top: 30px;
+            /* Location of the box */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            /* Full width */
+            height: auto;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-image: url("Graphix/wood.png");
+            border: 4px outset rgb(204, 112, 50);
+            filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.62));
+            /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            opacity: 1 !important;
+            max-width: 640px;
+            border: 4px inset rgb(204, 112, 50);
+
+        }
+
+        .modal-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 640px;
+            text-align: center;
+            color: white;
+            font-weight: 300;
+            font-size: 1em;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.62));
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: #f1f1f1;
+            font-size: 40px;
+            transition: 0.3s;
+            cursor: pointer;
+            filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.62));
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        h1 {
+            font-size: 45px;
+            letter-spacing: .6rem;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="modal" class="modal">
+        <span id="modal-close" class="modal-close">&times;</span>
+        <img id="modal-content" class="modal-content">
+        <div id="modal-caption" class="modal-caption"></div>
+    </div>
+    <div id="Titlebar">
+        <a href="artcorner.html"><img src="Graphix/artzonelogo.gif" alt="Art Zone Logo"></a>
+    </div>
+    <div id="MainWindowBox">
+        <div id="navbar">
+            <button type="button" id="gallery3d" onclick="showtab('threedgallery')">
+                <img src="Graphix/Buttonz/gallery.png" alt="3D Art Gallery">
+            </button>
+            <button type="button" id="gallery2d" onclick="showtab('twodgallery')">
+                <img src="Graphix/Buttonz/gallery2d.png" alt="2D Art Gallery">
+            </button>
+            <button type="button" id="animation" onclick="showtab('animationgallery')">
+                <img src="Graphix/Buttonz/animation.png" alt="Animation Gallery">
+            </button>
+            <button type="button" id="motiongraphix" onclick="showtab('motiongallery')">
+                <img src="Graphix/Buttonz/motiongraphix.png" alt="Motion Graphics Gallery">
+            </button>
+            <button type="button" id="comminfo" onclick="showtab('commissioninfo')">
+                <img src="Graphix/Buttonz/comminfo.png" alt="Commission Info">
+            </button>
+            <button type="button" id="freestuff" onclick="showtab('freefiles')">
+                <img src="Graphix/Buttonz/freestuff.png" alt="Free stuff">
+            </button>
+            <button type="button" id="back2about">
+                <a href="aboutme.html"> <img src="Graphix/Buttonz/takeaback.png" alt="Go back to About Me"></a>
+
+            </button>
+        </div>
+        <div id="threedgallery" class="tabs" style="display:none">
+            <h2><a href="#bryce">Bryce |</a>
+                <a href="#charactermodeling">Character Modeling |
+                </a>
+                <a href="#misc3d">Miscellaneous</a>
+            </h2>
+            <div class="showhiding" id="bryce">
+                <h2>Bryce</h2>
+                <p> Bryce is a standalone 3D modeling and animation program that was primarily used by hobbyists and
+                    freelance 3d artists in the 90's and 2000s (especially rave posters, it seems). The focus of this
+                    program is primarily landscape generation and procedural texturing; you can create 'terrain'
+                    objects, and edit them using a greyscale height map. There are many different versions, but I
+                    primarily use Bryce7, since it runs on Windows 10, and it has a tree generator!<br>
+                    <br> By today's standards, Bryce's UI is really strange. You basically don't get any keyboard
+                    controls, having to use the strange skeumorphic button schemes to edit your objects. It's pretty
+                    difficult to get used to, but the results feel very authentic to 3D renders of the new millenium. If
+                    you have 20 bucks to spare, I highly recommend trying Bryce7 out. <br> <br> Images are presented
+                    from oldest to newest.
+                </p>
+                <hr>
+                <h2>Bryce 3D Renders (Windows 98)</h2>
+                <div class="gallery">
+                    <img class="exhibit" src="artzone/3D/early-bryce/thebay.png"
+                        alt="Bay.bmp. This is the first image I successfully made in Bryce 3D. In order to get these images off of my virtual machine, I had to create a fake floppy disk to save the files to. Really fun results, though.">
+                    <img class="exhibit" src="artzone/3D/early-bryce/tropics.png"
+                        alt="I called this one Tropics.bmp. This was me trying to mess with lattices, which are kind of like terrains except they're mirrored, so you can make floating islands and stuff like that.">
+                    <img class="exhibit" src="artzone/3D/early-bryce/crystalinthelake.png"
+                        alt="CrystalInTheLake.bmp. This file was rendered out at a full 1920x1080! ... I literally had to zip the file, split that zip into multiple mini-zips, then save those mini-zips to different floppy disks, just to get it off of the virtual machine. What a pain!">
+                    <img class="exhibit" src="artzone/3D/early-bryce/GOLF2.png"
+                        alt="Golf2.bmp. I don't remember why I called it golf2 - It's not like I made multiple golf images. I'd love to remake this in bryce7, now that i'm more experienced with its tree generators. The weird bryce3d trees really take away from it.">
+                    <img class="exhibit" src="artzone/3D/early-bryce/hiddenisle.png"
+                        alt="HiddenIsle.bmp. This one is my favorite of the early bryce renders, besides Bay. I love making tropical island based locations; super mario sunshine has wormed its way into my skull.">
+                </div>
+                <br>
+                <hr>
+                <h2>Bryce 7 Renders (Windows 10)</h2>
+                <div class="gallery">
+                    <img class="exhibit" src="artzone/3D/bryce-7/previewcastle.png"
+                        alt="Castle.bmp. This is my first test of Bryce7! I was struggling with how to keep things looking as crusty as they looked in bryce3D; since Bryce7 is a much newer program, it had 'modern rendering features' - the very things I was trying to avoid. Thankfully, careful use of lighting / dithering / posterizing the final result works wonders.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/waterfall.png"
+                        alt="waterfall.bmp. Another early bryce7 render. i'm still very happy with this, but I think i'd give the foliage another attempt.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/castleunicorn.png"
+                        alt="castleunicorn.bmp. This one was based off of this book i used to read ALL THE TIME as a child (well, based on its cover art, at least). i think the name was The Unicorn's Secret ??">
+                    <img class="exhibit" src="artzone/3D/bryce-7/redcoinreef.png"
+                        alt="redcoinreef.bmp. The fish models in this were old royalty free ones I found by digging thru google search results sorted by date >:D">
+                    <img class="exhibit" src="artzone/3D/bryce-7/weed.png"
+                        alt="weed.bmp. Hahaha, its weed. kinda. I didn't feel like making a weed leaf texture so i just used maple leaves. This was made for CableTwo's 4/20 2021 stream. I don't even smoke weed but I love making 4/20 jokes">
+                    <img class="exhibit" src="artzone/3D/bryce-7/trees.png"
+                        alt="trees.bmp. This was made during CableTwo's 2021 Arbor Day stream!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/funnyalien.png"
+                        alt="funnyalien.bmp. I was dealing with finals stress burnout at the time, and was trying to use bryce as my way of getting out of that funk. hee hoo aliens">
+                    <img class="exhibit" src="artzone/3D/bryce-7/starrywaterfall.png"
+                        alt="starrywaterfall.bmp. This started as a request from my friend Frank and totally spiraled out of control, still one of my favorites to this day!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/morningmist.png"
+                        alt="morningmist.bmp. I don't think I ever posted this one, but I really like it, so here it is!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/BlackstoneBay.png"
+                        alt="blackstonebay.bmp. This is right around the time i figured out how the dither tool in photoshop worked, and started going ham. This resulted in me getting in a bit of a spat with someone on Reddit for my overuse of dithering, lmfao">
+                    <img class="exhibit" src="artzone/3D/bryce-7/CanyonNoClouds.png"
+                        alt="crystalCanyon.bmp. can you tell i made a 3d model of crystals for a class project one time?">
+                    <img class="exhibit" src="artzone/3D/bryce-7/HalloweenHillsPREVIEW.png"
+                        alt="halloweenhills.bmp. I got consumed by the sudden urge for a cozy halloween wallpaper and made this. I have a lot of nostalgia for children's halloween media, and I think that influences all the fall-related art I make.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/backupcomputertest.png"
+                        alt="backupcomputertest.bmp. This was done to test a crappy little backup computer I had. I don't think i've used it since, to be honest haha">
+                    <img class="exhibit" src="artzone/3D/bryce-7/DreamsicleRidge_.png"
+                        alt="dreamsicleridge.bmp. Heavily post-processed. This followed a long art drought that lasted from the beginning of August to the end of September 2021.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/cedarquarry.png"
+                        alt="cedarquarry.bmp. Brrr, it's getting chilly out there!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/alpinefunnies.png"
+                        alt="alpinefunnies.bmp. This one started a long and proud tradition of me asking on twitter for suggestions of things to put in random landscapes I made in bryce.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/EmeraldCoast.png"
+                        alt="emeraldcoast.bmp. Can you tell I'm a fan of Sonic the Hedgehog?">
+                    <img class="exhibit" src="artzone/3D/bryce-7/sunsetcove_nodither.png"
+                        alt="sunsetcove.bmp. The first art I made in 2022!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/amethystvalley.png"
+                        alt="amethystvalley.bmp. This is one of my absolute favorite pieces, and I think the most popular one I've made? lots of strategic use of the tree generator here.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/LowbrowBayTwitter.png"
+                        alt="lowbrowbay.bmp. Name based on the lowbrow surrealism art genre (coined by CARI). I am still rather pleased with the rocky water effect I got here (foam material applied to a lattice object that was then squashed)">
+                    <img class="exhibit" src="artzone/3D/bryce-7/shrimptank_twitter.png"
+                        alt="shrimptank.bmp. I really, really, really wanted to set up a freshwater shrimp aquarium. (I finally did at the end of april, woo!)">
+                    <img class="exhibit" src="artzone/3D/bryce-7/alignment.png"
+                        alt="alignment.bmp. Ooh, some strategic use of touruses with weird materials here. It's kinda spooky...">
+                    <img class="exhibit" src="artzone/3D/bryce-7/researchport_fullrender.png"
+                        alt="researchport.bmp. This is another hall-of-famer of mine. I was thinking of jak and daxter-meets-space mountain, but twitter thinks it looks like Myst.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/warpcity.png"
+                        alt="warpcity.bmp. Part of a collection of concept arts for the world of The Warp that I made. I seriously can't believe I did this back in MARCH, what the hell? Time flies...">
+                    <img class="exhibit" src="artzone/3D/bryce-7/weed22.png"
+                        alt="weed22.bmp. Look, i swear I don't smoke, i'm honestly fairly boring. X) This was for CableTwo's 4/20 2022 stream!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/CHERRYBLOSSOM.png"
+                        alt="cherryblossom.bmp. Another absolute banger of a scene! I finally figured out how to make flowering trees; the 'flowering' part is actually a duplicated tree, with an invisible trunk, and different leaf settings. it works fairly well!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/toughtobeabug.png"
+                        alt="toughtobeabug.bmp. Family took a trip to Disney at the end of may (hence the name). The plane to fly back home got delayed by a whole day (THANKS, UNITED). I made this while waiting for news on our flight in the terminal.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/celestialisland.png"
+                        alt="celestialisland.bmp. Comparing this to tropics.bmp, it's clear to me just how much better i've gotten at Bryce's stupid control scheme.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/iamboredatwork.png"
+                        alt="nucleargreenhouse.bmp. Originally a much brighter scene, before twitter suggestions sparked my imagination and made it kinda sad. I like it, though!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/spooktobercontest.png"
+                        alt="spooktobercontest.bmp. This was made for r/retrocgi's spooktober event! I couldn't help but make a haunted mansion style tombstone.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/bobross.png"
+                        alt="Tried following along with a Bob Ross joy of painting episode. The tree generator is a nightmare, but i'm sloooowly figuring it out!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/obligatorysnowscene.png" alt="Took me long enough to do a snow scene. making the northern lights was ... difficult.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/mar23.png" alt="Oops, i ripped off Elden ring!... I need to beat elden ring.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/onthetrain.png" alt="Made this one On A Train (god i love transit) and then finished on stream. I sure do love Myst graphics for someone who's never played Myst.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/magickingdom.png" alt=":D It's a magical kingdom (not copyrighted)! In retrospect, the castle is too big, but i'm very happy with this one.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/lonelyisland.png" alt="This was for the Bryce Forum's render contest #57, 'Lonely Island'! The story here is two sky pirates scoping out a reclusive inventor's floating factory.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/may23.png" alt="I used HDRIs for the first time in bryce in this scene - I adore how the lighting turns out.">
+                    <img class="exhibit" src="artzone/3D/bryce-7/puzzlingtides.png" alt="Wow, this one took a while. I started this scene in 2022, but didn't get anywhere with it. I returned to it during Summer 2023, and took time to model lots of different fish and corals. I'm very proud of it!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/kelpruin.png" alt="I made this for the Caustics challenge on the Bryce forums. I'm starting to hit the point where I'm crashing bryce with too many imported objects. I've got to find a better way to import items :P. UPDATE: Got third place! Woot woot!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/golfcourse.png" alt="I may be a leftist who doesn't like the IRL land and water use of golf courses, but MAN I can't deny the visual appeal of a virtual one. They're just so pleasing to my eyes...">
+                    <img class="exhibit" src="artzone/3D/bryce-7/finalcastle.png" alt="I wanted to try my hand at making a proper final-fantasy looking render, but I got distracted and added characters and now I'm not tooooo sure how I feel about it. Still proud of the castle model itself, though!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/onsen.png" alt="Second-to-last render of 2023. I wanted to capture the beautiful quiet of a hot spring in winter. I hope I can go to one some day!">
+                    <img class="exhibit" src="artzone/3D/bryce-7/arr.png" alt="The award for longest render time goes to this fake FFXIV ad, which took a whopping 25 days to render out. There's not even that much in the scene! Just the light bouncing with the crystals was enough to make my poor cpu cry.">
+                    </div>
+                <hr>
+                <h2>Commissioned scenes</h2>
+                Rather than keep these on the comm info tab, i'd rather keep them here, since they're a lot more casual
+                than my proper commissions. There's more than just these two, but I'm waiting to hear back from folks x)
+                <div class="gallery">
+                    <img class="exhibit" src="artzone/3d/bryce-7/commission-millenium.html"
+                        alt="This one is for Millenium Cyborg! Back in may, I offerred bryce7 scenes in exchange for proof to donate to an acquatiance's fundraiser. This scene was based off of some old renders she shared with me :)">
+                    <img class="exhibit" src="artzone/3D/bryce-7/commission-arby.png"
+                        alt="Arby commissioned this one from me! He asked for it to be reminiscent of the cyberlair. I tried working around some of the older cyberlair aesthetics, like twilight, and the desert - couldn't help but throw a plant in there, though.">
+                </div>
+
+            </div>
+            <div class="showhiding" id="charactermodeling">
+                <h2>Character Modelling</h2>
+                My favorite thing in the world is making characters, and learning 3D has given me the power to bring
+                those character to life and do funny dances.
+                <h1> WarpZone Stuff </h1>
+                <h2>Wizona</h2>
+                Wizona is a 'computer wizard', a game developer who has taken on a strange appearance after being
+                isekai'd into an old 90's game development pc.
+                Back in the olden days of CableTwo, behind the scenes, we were workshopping a 'cable two mascot' idea. I
+                pitched a mascot whose design changed to reflect each show, but carried a signature element - tv
+                antennae. The idea for a mascot died out, but I kept the sketch I made of a 'warp zone mascot' and
+                turned it into a 'warp zone sona' to use for Halloween. Warp zone-a. Wizona. Get it?
+                let's take a look at the progression from the original design to today!
+                <div class="gallery">
+                    <!--  <image class="exhibit" src="artzone/3D/charmodels/wizona/joke.jpg" alt="example of the kind of images i was using to represent myself on the Orb. The joke was that I was a literal computer wizard."></image>-->
+                    <img class="exhibit" src="artzone/3D/charmodels/wizona/wz.png"
+                        alt="The original design was meant to be a personified version of the intro screen, turning the eclipse into a head and the lair itself into the dress. This design was very heavily inspired by MP6. It's really hard to look at this now to be honest; firstly, I hate wearing dresses, secondly, where is your nose you look like a pug 😭">
+                    <img class="exhibit" src="artzone/3D/charmodels/wizona/kddzi3X.png"
+                        alt="early 2021, I realized that I really wanted to update the design. Tried to incorporate more elements to represent things i enjoy, and tried to make the design less uncanny.">
+                    <img class="exhibit" src="artzone/3D/charmodels/wizona/wizona.png"
+                        alt="Current version of the design as of 2022! After seeing many other beautiful vtubers, I really wanted to put effort into fleshing out wizona's design and making her look nicer. I am pretty happy with where it's at, now.">
+                    <img class="exhibit" src="artzone/3D/charmodels/wizona/wizona2.png"
+                        alt="Some more renders of the latest model.">
+                    <img class="exhibit" src="artzone/3D/charmodels/wizona/STINGERBACKA.png"
+                        alt="Wizona's stinger graphic from the new stinger animations.">
+                </div>
+                <br>
+                <h2>The Netizens</h2>
+                Back in college, I had a long string of time where I really wasn't working on any OC's (bad for my
+                health). The netizens started off as a project for my advanced portfolio development course and ended up
+                becoming a whole new cast of little guys for me to look at. :)
+
+                <div class="gallery">
+                    <img class="exhibit" src="artzone/3D/charmodels/betanetizensA.png"
+                        alt="The original set of netizens renders I made for my course. ">
+                    <img class="exhibit" src="artzone/3D/charmodels/Betanetizens.png"
+                        alt="The original set of netizens renders I made for my course. ">
+                    <img class="exhibit" src="artzone/3D/charmodels/conceptSketching.png"
+                        alt="Collection of concept art. I think it's fun to include how messy my note sketches are lol! A lot of my 'concepting' honestly happens in my 3d modeling programs.">
+                    <img class="exhibit" src="artzone/3D/charmodels/thelineup.png"
+                        alt="The current lineup of all modeled, rigged netizens!">
+                    <img class="exhibit" src="artzone/3D/charmodels/YGZL_LoadBearer.png"
+                        alt="YGZL the Load-Bearer was created specifically for arbor day.">
+
+                </div>
+                <br>
+                Some of these designs ended up getting pretty heavily tweaked when I went back to them in 2022. A few
+                characters have been demoted to side characters, and haven't gotten a remodel yet. The ones that I've
+                decided are my favorites are all in the 'World of the Warp' Flash gallery on the main page!
+                As a bonus, here's all of their stinger graphics, as well!
+                <div class="gallery">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingerb.png" alt="Shopkeep's stinger.">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingerc.png" alt="The Mayor's stinger.">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingerd.png" alt="Midra and Waveking's stinger.">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingere.png" alt="Manifold's stinger.">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingerf.png"
+                        alt="Professor and Hypertext's stinger.">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingerg.png"
+                        alt="Whirlibird and Chrome Devil's stinger.">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingerh.png" alt="Cyberbot's stinger.">
+                    <img class="exhibit" src="artzone/3D/charmodels/stingeri.png" alt="PROTAG's stinger.">
+                </div>
+
+
+            </div>
+            <div class="showhiding" id="misc3d">
+                <h2>Miscellaneous</h2>
+                For Miscellaneous work that doesn't fit in the above categories.
+                <hr>
+                <h2> WarpZone Stuff </h2>
+                Here's some photos of Warp City thru the ages, plus misc. graphics.
+                <div class="gallery">
+                    <image class="exhibit" src="artzone/3D/misc/originallair.png"
+                        alt="The original Cyberlair, which was meant to tie into my 'orb persona' (hint: i ended up just becoming a vtuber lol). I based it off of the webdings character series  .">
+                    </image>
+                    <image class="exhibit" src="artzone/3D/misc/2021lair.png"
+                        alt="The lair, and Warp City, as it first appeared in 2021. I may have strayed away from the desert somewhat, but it's nice to have all the extra color.">
+                    </image>
+                    <img class="exhibit" src="artzone/3D/misc/warpzonegraphic.png"
+                        alt="A render representing Warp Zone that has been used as both a wallpaper and a shirt graphic!">
+                </div>
+                <hr>
+                <h2>Artfight Attacks</h2>
+                I've been trying to do some of my Artfight attacks in 3d! I've compiled a few that i'm very proud of
+                here.
+                <div class="gallery">
+                    <img class="exhibit" src="artzone/3D/misc/Daisy.png"
+                        alt="A pleasant Walk Through Grey, for BeebFreeb! I absolutely adore their characters and world, and gave this a shot at the end of AF21. https://artfight.net/attack/2552306.a-pleasant-walk-through-grey">
+                    <img class="exhibit" src="artzone/3D/misc/AF22MrFriend.png"
+                        alt="Creative Exersize, for gay_cars!! This was my first attack of AF 22. https://artfight.net/attack/2690447.creative-exersize">
+                    <img class="exhibit" src="artzone/3D/misc/bentleybat.png"
+                        alt="I Wanna Fly, for ProfessorRenderer! Can you tell I /really/ like Sonic Adventure? https://artfight.net/attack/2690447.creative-exersize">
+                    <img class="exhibit" src="artzone/3D/misc/fullmaple.png"
+                        alt="Teatime.exe for Official_maple! This was meant to be a sequel to their attack on Wizona. :) https://artfight.net/attack/3231311.teatimeexe">
+                    <img class="exhibit" src="artzone/3D/misc/karma.png"
+                        alt="How to Sell a Contradiciton, for Amethysuto! I swear I was about to start working on an attack for them when i got the ping that they attacked me OTL. Next time, i'll attack first!! (hopefully) https://artfight.net/attack/3640590.how-to-sell-a-contradiction">
+                </div>
+                <hr>
+                <h2> Misc. Miscellaneous</h2>
+                hey, I'm an artist, not a writer.
+                <div class="gallery">
+                    <img class="exhibit" src="artzone/3D/misc/supervillainisland.png"
+                        alt="My first experiment with UnrealEngine4; a 'diorama' / scene of a 50's supervillain lair next to a volcano, on a tropical island.">
+                    <img class="exhibit" src="artzone/3D/misc/hlvrai.png"
+                        alt="Probably the most well-known thing i've done. This is my submission for the HLVRAI year 1 fanzine! Not to brag or anything, but mr Wayne's radio television said it was his 'new favorite fanart'. :}">
+                    <img class="exhibit" src="artzone/3D/misc/aynet2.png" alt="Made this fake poster for Millenium_cyborg and I's co-hosted show on cabletwo. Still very grateful she invited me to do the show with her, learning is so much fun!">
+                </div>
+            </div>
+
+        </div>
+        <div id="twodgallery" class="tabs" style="display:none">
+            Genuinely IRL I do a lot of 2D art, it's just that most of it is concept art and not really polished enough
+            for public viewing. I've compiled some drawings below that I still like haha
+            <h2>Artfight</h2>
+            Some of my favorites from my Artfight attacks on others!
+            <div class="gallery">
+                <img class="exhibit" src="artzone/2D/abbadon.png"
+                    alt="Art of Tousei's Abbadon. I really love tousei's art style and character designs!! https://artfight.net/attack/2711571.abaddon">
+                <img class="exhibit" src="artzone/2D/blizzy.png"
+                    alt="Art of clowncarcass's character, Lunamorz!! https://artfight.net/attack/4006822.im-mr-icicle-im-mr-10-below">
+                <img class="exhibit" src="artzone/2D/carifest6.png"
+                    alt="This is fanart for articution and linsang's carifest6 set! https://artfight.net/attack/4047562.fast-chimmy">
+                <img class="exhibit" src="artzone/2D/endeering.png"
+                    alt="This is art for Endeering's OC, Sparky! https://artfight.net/attack/1860543.epic-cool-robot-moments-of-2021">
+                <img class="exhibit" src="artzone/2D/miko.png"
+                    alt="This is art for Brengunk's oc Miko! https://artfight.net/attack/2502409.vermwired-creepypasta-real-miko-look-out">
+                <img class="exhibit" src="artzone/2d/aroniamo.html"
+                    alt="This is art for Treslechesmanga's oc Harmonia! https://artfight.net/attack/2515283.funny-moonhead-solidarity">
+            </div>
+            <hr>
+            <h2>Misc?</h2>
+            Sigh. I need to do more 2d art that I enjoy, so I can fill this section out more.
+            <div class="gallery">
+                <img class="exhibit" src="artzone/2D/warpwebsite.png"
+                    alt="(excluding the logo, which was made by the exceedingly talented @heaxpsd) I made most of the assets for this website using photoshop/illustrator! :]">
+                <img class="exhibit" src="artzone/2D/networklogo.png"
+                    alt="The network logo + a lot of its branding elements were done by me! (if you don't know what the Ne2rk is, it's when Cabletwo tries to have a real television channel setup with bumpers and shit. its awesome i think">
+                <img class="exhibit" src="artzone/2D/wizonasketch.png"
+                    alt="[Drawing of Wizona.]Experimenting with doing pencil sketches and using threshhold on photgraphs of the original sketch to get this weird lineart look. It's fun!">
+                <img class="exhibit" src="artzone/2D/megabytesketch.png"
+                    alt="[Drawing of Waveking and Midra.]This postprocess look kind of reminds me of like, those mickey mouse sketchbooks they sell at walt disney world. ">
+            </div>
+        </div>
+        <div id="animationgallery" class="tabs" style="display:none">
+            For animations that don't count as motion graphics. Yeah, I just found out these were different things like
+            10 hours ago, what of it?
+            <div class="gallery">
+                <img class="exhibit" src="artzone/ANIMATION/PickleCheeseGameDemo.gif"
+                    alt="Good lord, Slitherbop's designs just make me go insane. For artfight 2021, I tried to envision what a Pickle&Cheese (their lovely ocs featured in this) point and click game would look like. https://artfight.net/attack/2444965.picklecheese-e3-gameplay-demo-full-rez-in-description">
+                <img class="exhibit" src="artzone/ANIMATION/tmp_noiseloopntscqt.gif"
+                    alt="This is the animation loop that I use during warp zone's BRB screen! FUN FACT I did the background animation partially in Kid Pix Deluxe.">
+                <img class="exhibit" src="artzone/ANIMATION/Nullcasting_ScorpyY2K.gif"
+                    alt="I made this animation of a potential Socpens persona design for a 'Thank You RTVS' zine a while back (this was before he did face reveal)! Honestly, If i could go back, I know I could do better animation than this haha">
+            </div>
+        </div>
+        <div id="motiongallery" class="tabs" style="display:none">
+            Motion Graphics! It's like animation, but with TEXT and INFORMATION. I think! I wasn't a very good video
+            student.
+            <h2> The Network</h2>
+            Besides just creating the logo and working with Arby (o7 captain) on the brand design, I also made a few
+            schedule bumpers to fit inbetween the reruns. Two of them were used during our first run of the Network.
+            <div class="gallery">
+                <img class="exhibit" src="artzone/MOTIONGRAPHIX/tube1_MorningBlockScheduleBumper.gif"
+                    alt="To be honest, this one is my absolute favorite, and it's a crime that you can't hear the accompanying audio, but I really, really, don't want to do the work to get video tags to work with this setup. it's a miracle the modal popup works at all.">
+                <img class="exhibit" src="artzone/MOTIONGRAPHIX/Tube1_lateafternoonschedulebump_1.gif"
+                    alt="The 'late afternoon' bumper! Honestly feels a bit more like an evening bumper, but YMMV.">
+                <img class="exhibit" src="artzone/MOTIONGRAPHIX/DrivingScheduleBump_VHS_Test1.gif"
+                    alt="Didn't end up using this one during the first run of The Ne2rk. I still like it, though, so it goes here!">
+            </div>
+            Note: I'm currently working on a whole suite of new animations for my streams, but I feel like it'd ruin the
+            fun if i put them all here early. So, future nullcasting, remember to update this please
+        </div>
+        <div id="commissioninfo" class="tabs" style="display:none">
+            I do advice and help for FREE! Please do not be intimidated to DM/email me with questions about 3d work,
+            animation, website stuff, etc.
+            <h2> Rulez </h2>
+            I will NOT work on:
+            <ul>
+                <li>Anything derogatory or hateful</li>
+                <li>Whatever new scam techbros are excited about</li>
+                <li>Anything NSFW</li>
+            </ul>
+            Partial payment is expected up front, final payment must be given before files are handed over.
+            Please be nice 🥺
+            <hr>
+            <h3> Pricing and other details available on the google form! 
+                Want to request something that isn't on the form? DM / email me. <br>
+                <button id="linktocommform">
+                   <a href="https://forms.gle/8tznrQCDkimDvfcg8" target="_blank"><img src="Graphix/commissionformbutton.png" alt="Commission Form!"></a> 
+                </button>
+
+            </h3>
+            <hr>
+            <h2>Queue</h2>
+            Comms are currently: <b>OPEN!!</b>
+            <ol>
+                <li>[REDACTED]-A vtubing character of a scurrying nature.</li>
+                <li>[REDACTED]-A title card for an animation.</li>
+            </ol>
+            <hr>
+            <h2>Completed</h2>
+            <hr>
+            <h3>CottonWings</h3>
+            Cotton [aside from being a CEO] is a lovely streamer who reached out to me for retro-3d overlay assets! I
+            tried to base these off of ui element choices from around the XP era. <a
+                href="https://www.twitch.tv/cottonwings" target="_blank">Why not check out how it looks in motion? (also
+                Cotton is hilarious you should stop by)</a>
+            <div class="gallery">
+                <img class="exhibit" src="artzone/2D/commission-cotton-overlay.png"
+                    alt="Here's a preview of the majority of assets I made! All in all, it was about 9 3d models, 9 gif renders, and modular pieces for an overlay. I'm quite pleased with how these turned out!!">
+                <img class="exhibit" src="artzone/2D/commission-cotton-schedule.png"
+                    alt="I also designed their new schedule template! I honestly quite liked their original template's layout, and chose to focus on aesthetic changes instead of reorganizing the information.">
+            </div>
+            <hr>
+            <h3>SundaysPlayzone</h3>
+            Sunday has a wonderful VHS aesthetic that reminds me of warm fuzzy memories from my childhood. They asked me to make a short bumper for their streams! 
+            <div class="gallery"><img class="exhibit" src="artzone/ANIMATION/tmp_sunday1.gif" alt="I tried to do this originally on my iMac g3. It... did not work :D. Maya it is haha."></div>
+            <hr>
+            <h3>Holosynth</h3>
+            Holosynth requested a bust render of their sona and their mascot snuggling, which is maybe the cutest commission request of all time. 
+            <div class="gallery">
+                <img class="exhibit" src="artzone/3D/misc/holosynthk1.png" alt="The name of their mascot is K1. I had a great time modeling these two - especially helped by holosynth providing many references!">
+            </div>
+            <hr>
+            <h3>Shindigs
+            </h3>
+            I was starstruck when Shindigs reached out to me - He's the guy doing all the crazy interactive vtubing stuff on twitch. He asked me to make a static render of his avatar.
+            <div class="gallery">
+                <img class="exhibit" src="artzone/3D/misc/shindigs.png" alt="Inspired by their movie-making streams, I put Shindigs in a director's chair, filming some sort of action off-screen.">
+            </div>
+        </div>
+        <div id="freefiles" class="tabs" style="display:none">
+            WOOO FREE STUFF FOR YOUR WEBSITE WOO YEAH!
+            <b> you can use for anything, please just credit me. Thank you! </b>
+            <h2>IMAGE PAKZ</h2>
+
+            I'm hoping to eventually have a bunch of free-to-use 3d renders here!
+            These will be downloadable zips of images. Keep in mind that they may be large files.
+
+            <h3>Halloween Pak</h3>
+            This image pak contains <b>267</b> images to really scare the pants off of your website guests! <b>Click the
+                image to download the ZIP.</b>
+            <a href="artzone/FREE/halloweenimages.zip" download="HalloweenImagesPAK"><img class="preview"
+                    src="artzone/FREE/halloweenpakpreview.png"
+                    alt="A very spooky collection of free to use graphics for your website!"></a>
+
+        </div>
+        <div id="default" class="tabs">
+            <h1 style="text-align:right;">Welcome to the Art Zone!</h1>
+            <p style="z-index: 2;text-align:right;">This is an image gallery of some of my work, both 2d and 3d. You can
+                also
+                <br> find free-to-use assets here,
+                and my commission info.<br>
+                Click a button above to get started. Please be aware:<br> Some pages may take time to load due
+                to
+                the number<br>
+                of images in their galleries.
+                <br><br><br>
+                <b>The best viewing experience is on a 16:9 monitor.<br>Animation and Motion Graphix tabs have animated
+                    <br> GIFs with bright colors. </b>
+            </p>
+
+            <img src="artzone/artzonemaingraphic.png"
+                alt="Render of Wizona painting a 3d landscape on easel and canvas. Manifold is perched on top of the easel, watching."
+                style="z-index: 0; position:absolute; left:0; top:370;filter: drop-shadow(5px 5px 2px rgba(105, 83, 118, 0.62)); ">
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="footer">
+        <button type="button" id="gobacktop"><a href="#Titlebar"><img src="Graphix/Buttonz/goback2top.png"
+                    alt="Go back to top" style="position: relative; top:90px; left:480; margin-top:-90px;"></a></button>
+
+        <img src="Graphix/artzonefooter.png" alt="Art Zone Footer" style="z-index: -1; max-width: 1100px;">
+    </div>
+    <script>
+        var modal = document.getElementById('modal');
+
+        var modalClose = document.getElementById('modal-close');
+
+        modalClose.addEventListener('click', function () {
+            modal.style.display = "none";
+        });
+        // global handler
+        document.addEventListener('click', function (e) {
+            if (e.target.className.indexOf('exhibit') !== -1) {
+                var img = e.target;
+                var modalImg = document.getElementById("modal-content");
+                var captionText = document.getElementById("modal-caption");
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                captionText.innerHTML = img.alt;
+            }
+        });
+
+        function showtab(tabname) {
+            const alltabs = document.getElementsByClassName("tabs");
+            console.log(tabname);
+            for (let i = 0; i < alltabs.length; i++) {
+                if (alltabs[i].id === tabname) {
+                    alltabs[i].style.display = "block";
+                } else {
+                    alltabs[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+
+</body>

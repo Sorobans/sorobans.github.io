@@ -1,0 +1,317 @@
+<html>
+
+
+<!-- Mirrored from warp.zone/Cabletwo by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Jan 2026 21:10:07 GMT -->
+<head>
+  <title> CABLE TWO </title>
+  <style>
+    body {
+      margin: auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-repeat: repeat;
+      /* Do not repeat the image */
+      background-size: cover;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .video-js {
+      border-style: inset;
+      overflow: hidden;
+
+    }
+
+    .video-js .vjs-tech {
+      margin-left: -100px;
+    }
+
+    .video-js .vjs-control-bar {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+
+    }
+
+    .window-body {
+      padding: 0;
+      margin: 0;
+    }
+
+    body::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+  <link href="../vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  <link href="videojs-playlist-ui/dist/videojs-playlist-ui.vertical.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../unpkg.com/98.css%400.1.21/dist/98.css" />
+  <!--following needed for gobackbutton-->
+  <script language="JavaScript">
+    function MM_preloadImages() { //v3.0
+      var d = document; if (d.images) {
+        if (!d.MM_p) d.MM_p = new Array();
+        var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+          if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+      }
+    }
+
+    function MM_swapImgRestore() { //v3.0
+      var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+    }
+
+    function MM_findObj(n, d) { //v3.0
+      var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+        d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+      }
+      if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+      for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document); return x;
+    }
+
+    function MM_swapImage() { //v3.0
+      var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+        if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+    }
+
+    function MM_controlSound(x, _sndObj, sndFile) { //v3.0
+      var i, method = "", sndObj = eval(_sndObj);
+      if (sndObj != null) {
+        if (navigator.appName == 'Netscape') method = "play";
+        else {
+          if (window.MM_WMP == null) {
+            window.MM_WMP = false;
+            for (i in sndObj) if (i == "ActiveMovie") {
+              window.MM_WMP = true; break;
+            }
+          }
+          if (window.MM_WMP) method = "play";
+          else if (sndObj.FileName) method = "run";
+        }
+      }
+      if (method) eval(_sndObj + "." + method + "()");
+      else window.location = sndFile;
+    }
+  //-->
+  </script>
+
+  <!-- videoJS-->
+</head>
+
+<script src="../player.twitch.tv/js/embed/v1.js"></script>
+
+<body bgcolor="#6633CC" background="Graphix/WZ_backgroundTest.png" text="#6666FF" link="#FF99FF" vlink="#FFCC33">
+  <div id="funnyflex">
+    <div id="TitleBarLayer"
+      style=" width:1100px; height:222px; z-index:1; background-image: url(Graphix/titlebar_looping.gif); layer-background-image: url(Graphix/TitleBar.gif); border: 1px none #000000; top: 11px">
+      <h1 align="center"><a href="index-2.html"><img src="Graphix/WZLOGO_ForWEb.gif" width="610" height="200" align="top"
+            name="Logo" border="0" alt="Warp Zone"></a></h1>
+    </div>
+    <div id="ContentHolder">
+      <!-- Add a placeholder for the Twitch embed -->
+      <div id="twitch" class="hide" style="border:10px outset black; align-content: center"></div>
+      <div id="Youtube">
+        <iframe width="1080" height="540"
+          src="https://www.youtube-nocookie.com/embed/videoseries?list=PL1GzdfLBzYsxjkHExAYOwXdt8fZOwe_j1"
+          style="border:10px outset black; align-content: center; title=" YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+
+
+
+
+      <script type="text/javascript">
+        var options = {
+          channel: "cabletwo", // TODO: Change this to the streams username you want to embed
+          width: 1080,
+          height: 540,
+          layout: "video-with-chat",
+        };
+        var player = new Twitch.Embed("twitch", options);
+
+        player.addEventListener(Twitch.Player.READY, initiate)
+
+        function initiate() {
+          player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+          player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+          player.removeEventListener(Twitch.Player.READY, initiate);
+        }
+
+        function handleOnline() {
+          document.getElementById("twitch").classList.remove('hide');
+          document.getElementById("Youtube").classList.add('hide');
+          player.removeEventListener(Twitch.Player.ONLINE, handleOnline);
+          player.addEventListener(Twitch.Player.OFFLINE, handleOffline);
+          player.setMuted(false);
+        }
+
+        function handleOffline() {
+          document.getElementById("twitch").classList.add('hide');
+          document.getElementById("Youtube").classList.remove('hide');
+          player.removeEventListener(Twitch.Player.OFFLINE, handleOffline);
+          player.addEventListener(Twitch.Player.ONLINE, handleOnline);
+          player.setMuted(true);
+        }
+      </script>
+
+
+
+
+
+
+    </div>
+
+
+    <div id="explanation"
+      style="border:10px outset black; color:black; background-image:url(Graphix/horizmetaltile.gif); width:1080">
+      <center>
+        <h2>What is Cabletwo?</h2>
+        Cabletwo is many things; a place, a threat, a promise, but to put it simply: <br>
+        Cabletwo is a bunch of people all streaming on the same twitch channel.
+        <br>
+        We like to try and focus on making things that are wacky and fun. Just look at Matrix Italiano, 500 Dogs, or
+        Media Landscape for proof of that. But ANYONE can stream on Cabletwo! so long as you have a fun idea, you can
+        join our channel and stream on it. It's fun!
+        for more information on cabletwo, please go to <a href="https://cabletwo.neocities.org/" target="_blank"
+          style="color:black">Our EPIC neocities website :)</a>!
+
+
+      </center>
+    </div>
+    <div id="aughueghuh" class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">Stream Clips</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div id="clipshow" class="window-body">
+        <!-- this is a place to view popular warp zone clips. make sure to credit the clipper. -->
+        <video id='videoplayer' class="video-js" onloadstart="this.volume = 0.35" controls preload="auto" width="600"
+          height="400" data-setup='{}' style="display:inline-block; margin-left: 20;">
+
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+        <div id="playlist-playlist" class="vjs-playlist "
+          style="margin-right:20px;width:40%;height:400px;display:inline-block;vertical-align:top;"></div>
+      </div>
+      <div class="status-bar">
+        <p class="status-bar-field">Have a clip you'd like to share?</p>
+        <p class="status-bar-field">Send it to me via my email null@cabletwo.tv</p>
+        <p class="status-bar-field">and i'll add it!</p>
+      </div>
+    </div>
+
+
+
+    <div id="Footer"
+      style="position:relative; width:1100px; height:100px; z-index:1; background-image: url(Graphix/footer.gif); border: 1px none #000000;">
+      <audio id="buttonSound" src="audio/btn.wav"></audio>
+      <p align="center"><a href="index.html" onMouseOut="MM_swapImgRestore()"
+          onMouseOver="MM_swapImage('gObACK','','Graphix/Buttonz/Back_2.gif',1)"><img name="gObACK" border="0"
+            src="Graphix/Buttonz/Back_1.gif" width="193" height="68"></a></p>
+    </div>
+  </div>
+  </object>
+  <script src="video.js/dist/video.min.js"></script>
+  <script src="videojs-playlist/dist/videojs-playlist.js"></script>
+  <script src="videojs-playlist-ui/dist/videojs-playlist-ui.min.js"></script>
+  <script type="text/javascript">
+
+    var player = videojs('videoplayer');
+    var myPlaylist = ([{
+      sources: [{ type: 'video/mp4', src: 'video/youcrashedit.mp4' }],
+      name: "You crashed it! [LOUD]- clipped by Urodov",
+
+    }, {
+      sources: [{
+        type: 'video/mp4', src: 'video/perfectwaterslidearby.mp4'
+      }],
+      name: "The perfect waterslide - Clipped by arby",
+
+    }, {
+      sources: [{
+        type: 'video/mp4', src: 'video/invalidreadnull.mp4'
+      }],
+      name: "an invalid read [LOUD] - clipped by Cyberbot",
+
+    },
+    {
+      sources: [{
+        type: 'video/mp4', src: 'video/goodatplayingvideogamesmillenium.mp4'
+      }],
+      name: "good at playing video games - clipped by milleniumCyborg",
+
+    },
+    {
+      sources: [{
+        type: 'video/mp4', src: 'video/nullfjuckingdiesnoombers.mp4'
+      }],
+      name: "null fjucking dies - clipped by noombers",
+    }, {
+      sources: [{
+        type: 'video/mp4', src: 'video/carflipurodov.mp4'
+      }],
+      name: "car flip - clipped by urodov",
+    },
+
+    {
+      sources: [{
+        type: 'video/mp4', src: 'video/twicethememecapitalist.mp4'
+      }],
+      name: "T W I C E - clipped by the_meme_capitalist",
+    }, {
+      sources: [{
+        type: 'video/mp4', src: 'video/yeetthememecapitalist.mp4'
+      }],
+      name: "YEET - clipped by the_meme_capitalist",
+    }, {
+      sources: [{
+        type: 'video/mp4', src: 'video/nasanarcchwoka.mp4'
+      }],
+      name: "NASA Narc - clipped by Chwoka",
+    }
+      , {
+      sources: [{
+        type: 'video/mp4', src: 'video/nullblastingdalm.mp4'
+      }],
+      name: "nullblasting - clipped by dalmationer",
+    }
+      , {
+      sources: [{
+        type: 'video/mp4', src: 'video/spookedmillenium.mp4'
+      }],
+      name: "spooked - clipped by Millenium_cyborg",
+    },
+       {
+      sources: [{
+        type: 'video/mp4', src: 'video/itsnotrealmillenium.mp4'
+      }],
+      name: "Its not real... or is it? - clipped by Millenium_cyborg",
+    }, {
+      sources: [{
+        type: 'video/mp4', src: 'video/nothingtobescaredof.mp4'
+      }],
+      name: "Nothing in this hallway that can scare me",
+    }
+
+    ]);
+    player.playlist(myPlaylist);
+    player.playlist.autoadvance(0);
+    player.playlistUi();
+  </script>
+
+
+
+</body>
